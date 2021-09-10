@@ -10,5 +10,13 @@ pipeline{
                 sh "mvn package -Dmaven.test.skip=true"
             }
         }
+        stage('Test'){
+            agent{
+                docker{image 'maven'}
+            }
+            steps{
+                sh "mvn clear install"
+            }
+        }
     }
 }

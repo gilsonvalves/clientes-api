@@ -11,17 +11,4 @@ pipeline {
             }
         }
     }
-    stages {
-        stage('Test') {
-            agent {
-                docker { image 'maven' }
-            }
-            steps {
-                sh "mvn clear install"
-            }
-        }
-    }
 }
-
-
-
